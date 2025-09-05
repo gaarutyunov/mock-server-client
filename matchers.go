@@ -1,11 +1,16 @@
 package mockserver
 
+type QueryParam struct {
+	Name  string `json:"name,omitempty"`
+	Value string `json:"value,omitempty"`
+}
+
 type RequestMatcher struct {
 	Method  string              `json:"method,omitempty"`
 	Path    string              `json:"path,omitempty"`
 	Body    BodyMatcher         `json:"body,omitempty"`
 	Headers map[string][]string `json:"headers,omitempty"`
-	Query   map[string][]string `json:"queryStringParameters,omitempty"`
+	Query   []QueryParam        `json:"queryStringParameters,omitempty"`
 }
 
 func (m RequestMatcher) WithHeader(key, value string) RequestMatcher {
