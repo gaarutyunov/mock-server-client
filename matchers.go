@@ -5,6 +5,7 @@ type RequestMatcher struct {
 	Path    string              `json:"path,omitempty"`
 	Body    BodyMatcher         `json:"body,omitempty"`
 	Headers map[string][]string `json:"headers,omitempty"`
+	Query   map[string][]string `json:"queryStringParameters,omitempty"`
 }
 
 func (m RequestMatcher) WithHeader(key, value string) RequestMatcher {
