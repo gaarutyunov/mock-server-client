@@ -1,8 +1,8 @@
 package mockserver
 
 type QueryParam struct {
-	Name  string `json:"name,omitempty"`
-	Value string `json:"value,omitempty"`
+	Name   string   `json:"name,omitempty"`
+	Values []string `json:"value,omitempty"`
 }
 
 type RequestMatcher struct {
